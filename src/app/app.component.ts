@@ -33,6 +33,9 @@ export class AppComponent {
     this.inicializarBanco();
   }
 
+  /**
+   * Inicializa os serviços do banco 
+   */
   inicializarBanco(){
     var self = this;
     this.DB.loadDB().then(function(){

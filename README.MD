@@ -2,6 +2,16 @@ Aplicação exemplo para se trabalhar
 com [LokiJS](http://lokijs.org/#/) e 
 [Ionic](ionicframework.com) (v4)
 
+Scripts Relevantes 
+=====================
+| Caminho | Descrição  |
+|---|---|
+|  src/app/database.service.ts  | database provider  |
+|  src/app/app.component.ts |  chamada do banco |
+|  src/app/home/home.page.ts | control app  |
+|  src/app/home/home.page.html | view app  |
+
+
 Instalação
 ====================
 
