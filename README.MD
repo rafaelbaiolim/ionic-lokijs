@@ -18,4 +18,4 @@ npm serve -c
 Remoção e Consulta do banco pelo Navegador
 ====================
 
-[logo]: https://github.com/rafaelbaiolim/ionic-lokijs/blob/master/images/query_delete_indexdb.png "exemplo"
+![alt text](https://raw.githubusercontent.com/rafaelbaiolim/ionic-lokijs/master/images/query_delete_indexdb.png)
