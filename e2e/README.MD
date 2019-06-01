@@ -15,5 +15,7 @@ Execução
 npm serve -c
 ```
 
-Remoção / Consulta do banco pelo Navegador
+Remoção e Consulta do banco pelo Navegador
 ====================
+
+[logo]: https://github.com/rafaelbaiolim/ionic-lokijs/blob/master/images/query_delete_indexdb.png "exemplo"
