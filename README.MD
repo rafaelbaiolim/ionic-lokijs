@@ -2,6 +2,8 @@ Aplicação exemplo para se trabalhar
 com [LokiJS](http://lokijs.org/#/) e 
 [Ionic](ionicframework.com) (v4)
 
+![alt text](https://raw.githubusercontent.com/rafaelbaiolim/ionic-lokijs/master/images/apresentacao.png)
+
 Scripts Relevantes 
 =====================
 | Caminho | Descrição  |
@@ -22,7 +24,7 @@ npm install
 Execução
 =====================
 ```
-npm serve -c
+ionic serve -c
 ```
 
 Remoção e Consulta do banco pelo Navegador
