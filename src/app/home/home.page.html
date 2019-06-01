@@ -10,35 +10,64 @@
 </ion-header>
 
 <ion-content>
-    <ion-card class="welcome-card">
-      <ion-img src="/assets/shapes.svg"></ion-img>
-      <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to Ionic</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
-      </ion-card-content>
-    </ion-card>
-    <ion-list lines="none">
-      <ion-list-header>
-        <ion-label>Resources</ion-label>
-      </ion-list-header>
-      <ion-item href="https://ionicframework.com/docs/">
-        <ion-icon slot="start" color="medium" name="book"></ion-icon>
-        <ion-label>Ionic Documentation</ion-label>
+  <ion-row>
+    <p><b>Inserir Registro</b></p>
+    <hr>
+  </ion-row>
+  <ion-row>
+    <form (ngSubmit)="adicionar()">
+      <ion-item>
+        <ion-label>Modelo do Carro: </ion-label>
+        <ion-input type="text" [(ngModel)]="carro.modelo" name="carroModelo"></ion-input>
       </ion-item>
-      <ion-item href="https://ionicframework.com/docs/building/scaffolding">
-        <ion-icon slot="start" color="medium" name="build"></ion-icon>
-        <ion-label>Scaffold Out Your App</ion-label>
+      <ion-item>
+        <ion-label>Cor do Carro: </ion-label>
+        <ion-input [(ngModel)]="carro.cor" name="carroCor"></ion-input>
       </ion-item>
-      <ion-item href="https://ionicframework.com/docs/layout/structure">
-        <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-        <ion-label>Change Your App Layout</ion-label>
+      <ion-button type="submit" block>Adicionar a Tabela: {{tabelaNome}}</ion-button>
+    </form>
+  </ion-row>
+
+
+  <ion-row>
+    <ion-col>
+      <h3>Buscar Registro</h3>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <form (ngSubmit)="buscar(busca)">
+      <ion-item>
+        <ion-label>Modelo do Carro: </ion-label>
+        <ion-input type="text" [(ngModel)]="busca.modelo" name="buscaModelo"></ion-input>
       </ion-item>
-      <ion-item href="https://ionicframework.com/docs/theming/basics">
-        <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-        <ion-label>Theme Your App</ion-label>
-      </ion-item>
-    </ion-list>
+      <ion-button type="submit" block>Buscar na Tabela: {{tabelaNome}}</ion-button>
+    </form>
+    <ion-row *ngIf="encontrado">
+      <ion-card>
+        <ion-card-header>
+          Registro encontrado
+        </ion-card-header>
+        <ion-card-content>{{encontrado}}</ion-card-content>
+      </ion-card>
+    </ion-row>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <h3>Carros salvos no banco</h3>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-list>
+        <ion-item *ngFor="let carroDB of carros">
+          <ion-input [(ngModel)]="carroDB.modelo" name="carroModeloBD"></ion-input>
+          <ion-input [(ngModel)]="carroDB.cor" name="carroCorBD"></ion-input>
+          <ion-button (click)="atualizar(carroDB)">ATUALIZAR</ion-button>
+          <ion-button (click)="remover(carroDB)">REMOVER</ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+
 </ion-content>
